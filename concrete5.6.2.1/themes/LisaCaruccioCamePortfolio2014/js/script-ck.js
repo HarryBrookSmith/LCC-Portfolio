@@ -1,0 +1,1 @@
+/* MOBILE COLLAPSE MENU */$(document).ready(function(){$(".slide-trigger").collapsable()});(function(e){e.fn.collapsable=function(t){return this.each(function(){var t=e(this),n=t.next(".navigation");t.click(function(){t.is(":visible")&&n.toggle()});e(window).resize(function(){e(window).width()<=570&&n.attr("style","")})})}})(jQuery);

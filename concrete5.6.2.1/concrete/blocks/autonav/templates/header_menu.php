@@ -2,7 +2,7 @@
 $navItems = $controller->getNavItems();
 ?>
 
-<ul class="nav-header">
+<ul class="nav-header-999">
 
 <?php  foreach ($navItems as $ni) {
 	

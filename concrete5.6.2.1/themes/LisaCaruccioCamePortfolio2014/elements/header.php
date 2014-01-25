@@ -36,7 +36,7 @@
   <!-- Use the .htaccess and remove these lines to avoid edge case issues.
        More info: h5bp.com/b/378 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  
+
   <?php  Loader::element('header_required'); ?>
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
@@ -61,14 +61,40 @@
 
   <div id="container">
     <header>
-    	<h1 id="logo"><!--
-			--><a href="<?php echo $home?>"><?php  
+    	
+        <div id="header-area">
+        	
+        	<nav id="mobile_nav">
+	        	<?php
+				$nav = BlockType::getByHandle('autonav');
+				$nav->controller->orderBy = 'display_asc';
+				$nav->controller->displayPages = 'top';
+				$nav->controller->displaySubPages = 'all';
+				$nav->controller->displaySubPageLevels = 'custom';
+				$nav->controller->displaySubPageLevelsNum = 0;
+				$nav->render('view');
+				?>
+			</nav>
+		</div>
+
+        <h1 id="logo">
+			<a href="<?php echo $home?>"><?php  
 				$block = Block::getByName('My_Site_Name');  
 				if( $block && $block->bID ) $block->display();   
 				else echo SITE;
-			?></a><!--
-		--></h1>
-        <div id="header-area">
-		
-        </div>
+			?></a>
+		</h1>
+
+		<nav id="nav">
+				<?php
+				$nav = BlockType::getByHandle('autonav');
+				$nav->controller->orderBy = 'display_asc';
+				$nav->controller->displayPages = 'top';
+				$nav->controller->displaySubPages = 'all';
+				$nav->controller->displaySubPageLevels = 'custom';
+				$nav->controller->displaySubPageLevelsNum = 0;
+				$nav->render('view');
+				?>
+		</nav>
+
     </header>

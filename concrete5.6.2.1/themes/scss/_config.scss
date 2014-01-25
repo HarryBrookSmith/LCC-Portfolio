@@ -3,6 +3,9 @@
 $primary-color: #772c2c;
 $secondary-color: #5b5959;
 $tertiary-color: #727272;
+$fourth-color: #c2c2c2;
+$fifth-color: #f8f8f8;
+
 
 $bad-color: $primary-color; // Bad color for errors, validation etc.
 $good-color: $primary-color; // Good color for success etc.
@@ -17,3 +20,5 @@ $padding: 40px; // Consistent padding and margins
 // FONTS
 $base-font-size:16px; // default: 16px, same as default browser font-size
 $rem-with-px-fallbacks: true; // default: true;
+
+//BREAKPOINTs

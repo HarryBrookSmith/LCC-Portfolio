@@ -10,9 +10,6 @@ $this->inc('elements/header.php'); ?>
 			?>
 		</div> <!-- end of #body -->
         
-        <aside id="sidebar">
-		
-		</aside>
     </div>
 
 <?php   $this->inc('elements/footer.php'); ?>

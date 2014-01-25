@@ -25,8 +25,9 @@ blockquote {
     color: $primary-color;
   }
   color: $primary-color;
-  @include rem(font-size, 60px);
-  @include rem(margin-top, 100px);
+  @include rem(font-size, 35px);
+  @include rem(margin-top, 25px);
+  @include rem(line-height, 70px);
   
 }
 
@@ -35,11 +36,10 @@ h1, h2, h3, h4, h5 {
 }
 
 h1, h2, h3, h4, h5 {
-  @include rem(font-size, 20px);
+  @include rem(font-size, 23px);
   @include rem(line-height, 25px);
   text-align: left;
   margin: 0px 0px 16px 0px;
-  font-size: 20px;
   color: rgba(132, 30, 30, 1);
   font-family: "Libre Baskerville";
   border-width: 1px 0px;
@@ -47,21 +47,22 @@ h1, h2, h3, h4, h5 {
   font-style: normal;
   color: $primary-color;
   text-transform: uppercase;
+
+
 }
 
 p {
   margin: 0 0 $padding/2;
-  @include rem(font-size, 15px);
 }
 
 p {
-   @include rem(font-size, 23px);
+   @include rem(font-size, 27px);
+   @include rem(line-height, 29px);
    margin: 0px 0px 8px 0px;
    color: rgba(114, 114, 114, 1);
    font-family: "Linden Hill";
    font-weight: 400;
-   font-style: normal;
-   text-transform: uppercase;
+   font-style: normal;  
 }
 
 pre{
