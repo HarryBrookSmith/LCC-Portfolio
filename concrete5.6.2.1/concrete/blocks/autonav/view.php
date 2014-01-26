@@ -109,11 +109,13 @@ foreach ($navItems as $ni) {
 
 
 //*** Step 2 of 2: Output menu HTML ***/
-echo '<nav class="group">';
+echo '<input type="checkbox" id="toggle" />';
 
-echo '<h2 class="navheader slide-trigger">Menu</h2>';
+echo '<div class="center_nav">';
 
-echo '<ul class="navigation group">'; //opens the top-level menu
+echo '<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick></label>';
+
+echo '<ul class="menu">'; //opens the top-level menu
 
 foreach ($navItems as $ni) {
 
@@ -130,4 +132,4 @@ foreach ($navItems as $ni) {
 }
 
 echo '</ul>'; //closes the top-level menu
-echo '</nav>';
+echo '</div>';

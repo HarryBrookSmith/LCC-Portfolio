@@ -348,35 +348,20 @@ body {
   font-size: 100%;
   line-height: 1.6; }
 
-html {
-  font-size: 62.5%; }
-
 blockquote {
   font-style: italic;
   font-weight: 400;
   padding-left: 25px;
   font-size: 26px;
   margin: 0 0 25px;
-  border-left: 2px solid #772c2c; }
-
-#logo {
-  text-align: center;
-  color: #772c2c;
-  font-size: 35px;
-  font-size: 2.1875rem;
-  margin-top: 25px;
-  margin-top: 1.5625rem;
-  line-height: 70px;
-  line-height: 4.375rem; }
-  #logo a {
-    color: #772c2c; }
+  border-left: 2px solid #923737; }
 
 h1, h2, h3, h4, h5 {
   font-family: 'Libre Baskerville', serif; }
 
 h1, h2, h3, h4, h5 {
-  font-size: 23px;
-  font-size: 1.4375rem;
+  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 25px;
   line-height: 1.5625rem;
   text-align: left;
@@ -386,22 +371,40 @@ h1, h2, h3, h4, h5 {
   border-width: 1px 0px;
   font-weight: 400;
   font-style: normal;
-  color: #772c2c;
+  color: #923737;
   text-transform: uppercase; }
+  @media only all and (min-width: 34.375em) {
+    h1, h2, h3, h4, h5 {
+      font-size: 18px;
+      font-size: 1.125rem;
+      line-height: 28px;
+      line-height: 1.75rem; } }
 
 p {
   margin: 0 0 20px; }
 
 p {
-  font-size: 27px;
-  font-size: 1.6875rem;
-  line-height: 29px;
-  line-height: 1.8125rem;
-  margin: 0px 0px 8px 0px;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  margin: 0px 0px 14px 0px;
   color: #727272;
   font-family: "Linden Hill";
   font-weight: 400;
   font-style: normal; }
+  @media only all and (min-width: 34.375em) {
+    p {
+      font-size: 17px;
+      font-size: 1.0625rem;
+      line-height: 25px;
+      line-height: 1.5625rem; } }
+  @media only all and (min-width: 43.75em) {
+    p {
+      font-size: 18px;
+      font-size: 1.125rem;
+      line-height: 26px;
+      line-height: 1.625rem; } }
 
 pre {
   margin: 0 0 20px;
@@ -416,6 +419,9 @@ pre {
 
 img, video, audio, iframe, object {
   max-width: 100%; }
+
+img {
+  height: auto; }
 
 table {
   width: 100%; }
@@ -457,8 +463,206 @@ hr {
 a {
   color: #5b5959; }
   a:link, a:hover, a:focus {
-    text-decoration: none; }
+    text-decoration: none;
+    color: black; }
 
+/*
+ * Navigataur: A pure CSS responsive navigation menu
+ * Author: Mike King (@micjamking)
+ */
+/*
+         Notes:
+ 
+         - Media queries should be edited in both style sections if you require 
+          a different breakpoint for your navigation.
+          
+        - Toggle class & menu anchor tags in list items have box-sizing: border-box 
+          style property to allow padding inside the container without conflicting with layout.        
+
+*/
+/*--------------------------------
+ Functional Styles (Required)
+---------------------------------*/
+.header {
+  position: relative; }
+
+#toggle, .toggle {
+  display: none; }
+
+.menu > li {
+  list-style: none;
+  float: left; }
+
+/* Nicolas Gallagher micro clearfix */
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: ""; }
+
+.clearfix:after {
+  clear: both; }
+
+@media only screen and (max-width: 549px) {
+  .menu {
+    display: none;
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 80px; }
+
+  .menu > li {
+    display: block;
+    width: 100%;
+    margin: 0; }
+
+  .menu > li > a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+
+  .toggle {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none; }
+
+  #toggle:checked + div .menu {
+    display: block;
+    opacity: 1; } }
+/*--------------------------------
+ Presentation Styles (Editable)
+---------------------------------*/
+.header {
+  min-height: 100px;
+  height: 100%;
+  padding: 0 20px;
+  background: #FFFFFF; }
+
+.header > h1 {
+  float: left;
+  padding: 30px 0 0;
+  font-style: italic;
+  font-family: Georgia;
+  font-size: 28px;
+  color: #DFDFDF; }
+
+.nav {
+  display: block;
+  float: right; }
+
+@media only all and (min-width: 34.375em) {
+  .center_nav {
+    display: inline-block; } }
+
+.nav, .menu, .menu > li, .menu > li > a {
+  height: 100%; }
+
+.menu .nav-selected {
+  color: #923737;
+  background: #f8f8f8; }
+
+@media only all and (min-width: 34.375em) {
+  .menu {
+    padding: 0px;
+    margin-top: 24px;
+    margin-top: 1.5rem; } }
+@media only all and (min-width: 43.75em) {
+  .menu {
+    font-size: 18px;
+    font-size: 1.125rem; } }
+
+.menu > li > a {
+  display: block;
+  padding: 11px 15px 6px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear; }
+  @media only all and (min-width: 34.375em) {
+    .menu > li > a {
+      font-size: 14px;
+      font-size: 0.875rem; } }
+  @media only all and (min-width: 43.75em) {
+    .menu > li > a {
+      font-size: 17px;
+      font-size: 1.0625rem; } }
+
+.menu > li > a:hover, .menu > li > a:focus {
+  color: #923737;
+  padding: 11px 15px 6px 15px; }
+
+.toggle {
+  z-index: 2; }
+
+@media only screen and (max-width: 549px) {
+  .menu {
+    background: #FFFFFF;
+    border-top: 1px solid #923737; }
+
+  .menu, .menu > li, .menu > li > a {
+    height: auto; }
+
+  .menu > li > a {
+    padding: 18px 15px 12px 15px; }
+
+  .menu > li > a:hover, .menu > li > a:focus {
+    background: #F2F2F2;
+    box-shadow: inset 5px 0px #923737;
+    padding: 18px 15px 12px 25px; }
+
+  .toggle:after {
+    content: attr(data-open);
+    display: block;
+    width: 200px;
+    margin: 33px 0;
+    padding: 12px 50px 8px 50px;
+    background: #923737;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 13px;
+    font-size: 0.8125rem;
+    color: #FFFFFF;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+
+  .toggle:hover:after {
+    background: #923737; }
+
+  #toggle:checked + div .toggle:after {
+    content: attr(data-close); } }
+@media only screen and (max-width: 549px) {
+  .header > h1 {
+    text-align: center;
+    text-transform: uppercase; }
+
+  .header > h1, .nav, .toggle:after {
+    float: none;
+    text-transform: uppercase;
+    letter-spacing: 4px; }
+
+  .toggle:after {
+    text-align: center;
+    width: 100%; } }
 /*!
  *  Font Awesome 3.2.0
  *  the iconic font designed for Bootstrap
@@ -1925,121 +2129,69 @@ a .icon-flip-vertical:before {
 .icon-renren:before {
   content: "\f18b"; }
 
-body #container {
+#container {
   width: 100%;
   margin: 10px 0 0 0; }
-  body #container header #logo {
-    text-align: center;
-    color: #772c2c;
-    font-size: 35px;
-    font-size: 2.1875rem;
-    margin-top: 25px;
-    margin-top: 1.5625rem;
-    line-height: 70px;
-    line-height: 4.375rem; }
+  #container #central {
+    width: 94%;
+    padding: 3%; }
     @media only all and (min-width: 34.375em) {
-      body #container header #logo {
-        font-size: 55px;
-        font-size: 3.4375rem;
-        margin-top: 65px;
-        margin-top: 4.0625rem;
-        line-height: 70px;
-        line-height: 4.375rem; } }
-    @media only all and (min-width: 48.75em) {
-      body #container header #logo {
-        font-size: 70px;
-        font-size: 4.375rem;
-        margin-top: 90px;
-        margin-top: 5.625rem;
-        line-height: 70px;
-        line-height: 4.375rem; } }
-    body #container header #logo a {
-      color: #772c2c; }
+      #container #central {
+        margin-top: 10px; } }
+    @media only all and (min-width: 43.75em) {
+      #container #central {
+        max-width: 800px;
+        margin: 0 auto;
+        margin-top: 10px;
+        box-sizing: border-box; }
+        #container #central img {
+          margin: 0 auto; } }
+    @media only all and (min-width: 890px) {
+      #container #central {
+        padding: 20px; } }
+    #container #central #body #gallery {
+      max-width: 500px;
+      margin: 0 auto; }
+      #container #central #body #gallery img {
+        margin-bottom: 30px; }
+    #container #central #body #about p {
+      margin-bottom: 0px; }
+  #container header #logo {
+    text-align: center;
+    color: #923737;
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 10px;
+    line-height: 0.625rem; }
+    @media only all and (min-width: 400px) {
+      #container header #logo {
+        font-size: 29px;
+        font-size: 1.8125rem;
+        margin-bottom: 33px;
+        margin-bottom: 2.0625rem;
+        margin: 2.5%; } }
+    @media only all and (min-width: 34.375em) {
+      #container header #logo {
+        font-size: 36px;
+        font-size: 2.25rem;
+        margin-top: 55px;
+        margin-top: 3.4375rem; } }
+    @media only all and (min-width: 43.75em) {
+      #container header #logo {
+        font-size: 38px;
+        font-size: 2.375rem;
+        margin-top: 55px;
+        margin-top: 3.4375rem; } }
+    #container header #logo a {
+      color: #923737; }
   @media only all and (min-width: 34.375em) {
-    body #container header {
-      display: block; } }
-  body #container header #nav {
-    width: 335px;
+    #container header #mobile_nav {
+      display: none; } }
+  #container header #nav {
     margin: 0 auto;
     overflow: hidden;
-    display: none; }
+    display: none;
+    text-align: center; }
     @media only all and (min-width: 34.375em) {
-      body #container header #nav {
+      #container header #nav {
         display: block; } }
-    body #container header #nav .navigation {
-      border: none; }
-      body #container header #nav .navigation li {
-        padding: 0px 15px 0 15px; }
-  body #container header #header-area #mobile_nav li:hover {
-    background: #f8f8f8; }
-  @media only all and (min-width: 34.375em) {
-    body #container header #header-area #mobile_nav {
-      display: none; }
-    body #container header #header-area #nav {
-      display: block; } }
-  body #container #central {
-    width: 96%;
-    padding: 2%; }
-body .navigation {
-  max-width: none;
-  padding: 0 0 10px 0;
-  border-bottom: 1px solid #c2c2c2; }
-  body .navigation.nav-selected {
-    color: #772c2c; }
-body .navigation li {
-  float: left;
-  text-decoration: none;
-  list-style: none;
-  text-align: center;
-  font-size: 25px;
-  font-size: 1.5625rem;
-  text-transform: uppercase; }
-  @media only screen and (max-width: 550px) {
-    body .navigation li.nav-selected {
-      background: #f8f8f8; }
-    body .navigation li a {
-      display: block;
-      color: #5b5959;
-      padding: 10px; }
-      body .navigation li a.nav-selected {
-        color: #772c2c;
-        font-size: 20px; } }
-body .navigation li a:hover {
-  color: #772c2c; }
-body .navheader {
-  font-size: 12px; }
-body .slide-trigger {
-  display: none;
-  /* need this */
-  border-top: 1px solid #c2c2c2;
-  border-bottom: 1px solid #c2c2c2;
-  cursor: pointer;
-  padding: 13px 0px;
-  font-size: 25px;
-  font-size: 1.5625rem;
-  text-align: center; }
-@media only screen and (max-width: 550px) {
-  body .slide-trigger {
-    display: block; }
-  body .no-js .slide-trigger {
-    display: none; }
-  body .navigation {
-    display: none; }
-  body .no-js .navigation {
-    display: block; }
-  body .navigation {
-    margin: 0 15px; }
-  body .navigation li {
-    float: none; }
-  body .navigation li a {
-    border-bottom: 1px solid #fff; } }
-
-@media only all and (min-width: 34.375em) {
-  header #nav {
-    width: 500px; }
-    header #nav li a {
-      display: block;
-      color: #5b5959;
-      padding: 10px;
-      font-size: 32px;
-      font-size: 2rem; } }
