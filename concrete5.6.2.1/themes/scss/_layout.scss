@@ -36,7 +36,7 @@
 
 			#body {
 
-				#gallery {
+				#headshots, #production_skills {
 
 					max-width: 500px;
 					margin: 0 auto;
@@ -50,6 +50,24 @@
 					p {
 						margin-bottom: 0px;
 					}
+				}
+			}
+
+			#links {
+				padding-top: 15px;
+				width: 19%;
+				margin: 0 auto;
+				min-width: 120px;
+
+				#imdb {
+					float: left;
+					width: 40%;
+
+				}
+
+				#spotlight {
+					float: right;
+					width: 40%;
 				}
 			}
 
@@ -111,12 +129,98 @@
 				display: block;
 			}
 
+			.menu {
+				display: inline-block;
+				margin: 1% 0 0 0;
+
+				li {
+					a {
+						-webkit-border-radius: 3px;
+                		border-radius: 3px;
+      					padding: 5px 15px 7px 15px;
+ 
+      					@include breakpoint(medium){
+							padding: 8px 15px 3px 15px;
+						}
+
+						&.nav-selected {
+							background: $fifth-color;
+							color: $primary-color;
+						}
+					}
+				}
+			}
+
 		}
 
-		#header-area {
+		#gallery_selection {
+			text-align: center;
 
-				
+			.menu {
+				display: inline-block;
+				margin: 1% 0 0 0;
 
+				li {
+					a {
+						-webkit-border-radius: 5px;
+                		border-radius: 5px;
+                		padding-top: 7px;
+                		padding-bottom: 4px;
+                		@include rem(font-size, 14px);
+
+
+						&.nav-selected {
+							background: $fifth-color;
+							color: $primary-color;
+						}
+					}
+				}
+			}
+
+		}
+
+		#gallery_selection_mobile {
+
+			.mobile_menu {
+				list-style-type: none;
+				padding: 0;
+
+				li {
+					width: 49.5%;
+
+
+					&.left_button {
+						float: left;
+					}
+
+					&.right_button {
+						float: right;
+					}
+
+					&.left_button, &.right_button {
+						text-align: center;
+						text-transform: uppercase;
+					}
+
+					a{
+						display: block;
+						padding: 4px 4px 0px 4px;
+						color: #ffffff;
+						letter-spacing: 4px;
+						@include rem(font-size, 14px);
+						-webkit-border-radius: 3px;
+                		border-radius: 3px;
+
+
+						&.nav-selected {
+							background: $primary-color;
+						}
+
+						background: $fourth-color;
+					
+					}
+				}
+			}
 		}
 
 	}

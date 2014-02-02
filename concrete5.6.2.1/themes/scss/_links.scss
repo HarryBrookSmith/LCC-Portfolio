@@ -1,9 +1,54 @@
 // Text links
 a{
-	color:$secondary-color;
-	&:link, &:hover,&:focus{
+	color:$tertiary-color;
+	&:link, &:focus{
 		text-decoration:none;
-		color: black;
+		color:$secondary-color;
+		border-bottom: 1px $fourth-color dotted;
     
 	}
+
+	&:hover {
+		color: $fourth-color;
+
+	}
+}
+
+#cv {
+		// Text links
+	a{
+		color:$tertiary-color;
+		&:link, &:focus{
+			text-decoration:none;
+			border-bottom: 1px $fourth-color dotted;
+	    
+		}
+
+		&:hover {
+		color: $fourth-color;
+
+		}
+
+
+	}
+
+}
+
+#logo a {
+	
+	border-bottom: none;
+	
+}
+
+.menu a {
+	
+	border-bottom: none;
+}
+
+#nav a {
+	border-bottom: none;
+}
+
+#gallery_selection_mobile a, #gallery_selection a {
+	border-bottom: none;
 }

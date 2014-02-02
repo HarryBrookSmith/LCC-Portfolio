@@ -10,9 +10,9 @@ $this->inc('elements/header.php'); ?>
 			?>
 		</div> <!-- end of #body -->
 
-		<div id="links">
-			<img id="imdb" src="img/imdb.jpg" />
-			<img id="spotlight" src="img/spotlight.jpg" />
+		<div id="links" class="clearfix">
+			<a href="http://www.imdb.com/name/nm6233234/" target="_blank"><img id="imdb" src="<?php echo $this->getThemePath();?>/img/imdb.jpg" /></a>
+			<a href="http://www.spotlight.com/9132-8970-6080" target="_blank"><img id="spotlight" src="<?php echo $this->getThemePath();?>/img/spotlight.jpg" />
 		</div>
         
     </div>

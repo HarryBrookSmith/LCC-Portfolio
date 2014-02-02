@@ -28,7 +28,7 @@
 .clearfix:after { clear: both; }
 
 @media only screen and (max-width: 549px){
-        .menu { display: none; opacity: 0; width: 100%; position: absolute; right: 0; top: 80px; }
+        .menu { display: none; opacity: 0; width: 100%; position: absolute; right: 0; top: 56px; }
         .menu > li { display: block; width: 100%; margin: 0; }
         .menu > li > a { display: block; width: 100%; text-decoration: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
         .toggle { display: block; position: relative; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
@@ -72,13 +72,20 @@
         height: 100%; 
 } 
 
-.menu .nav-selected {
+.menu .nav-selected .menu {
     color: $primary-color;
     background: $fifth-color;
     //font-weight: bold;
     //text-decoration: underline;
 
 }
+
+@include breakpoint(medium){
+    #gallery_selection_mobile {
+        display: none;
+    }
+}
+
 
 .menu {
 

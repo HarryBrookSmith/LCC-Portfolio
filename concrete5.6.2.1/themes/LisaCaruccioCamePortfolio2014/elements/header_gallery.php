@@ -75,6 +75,8 @@
 				$nav->render('view');
 				?>
 			</nav>
+
+
 		</div>
 
         <h1 id="logo">
@@ -84,10 +86,6 @@
 				else echo SITE;
 			?></a>
 		</h1>
-
-		<div id="gallery_selection">
-			
-		</div>
 
 		<nav id="nav">
 				<?php
@@ -100,5 +98,22 @@
 				$nav->render('view');
 				?>
 		</nav>
+
+		<div id="gallery_selection_mobile" class="clearfix">
+				<ul class="mobile_menu clearfix">
+					<li class="left_button"><a id="headshots_btn_m" href="" target="_self" class="nav-selected">Headshots</a></li>
+					<li class="right_button"><a id="production_skills_btn_m" href="" target="_self">Production</a></li>
+				</ul>
+		</div>
+
+		<div id="gallery_selection" class="clearfix">
+				<ul class="menu clearfix">
+					<li class=""><a id="headshots_btn" href="" target="_self" class="nav-selected">Headshots</a></li>
+					<li class=""><a id="production_skills_btn" href="" target="_self">Production</a></li>
+				</ul>
+		</div>
+
+
+
 
     </header>
